@@ -264,7 +264,7 @@ module.exports = Ramdani = async (Ramdani, mek) => {
 			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 			const isGroupAdmins = groupAdmins.includes(sender) || false
 			const isWelcome = isGroup ? _welcome.includes(from) : false
-			const isAntilink = isGroup ? _antilink.includes(from) : true
+			const isAntilink = isGroup ? _antilink.includes(from) : false
             const isAntivirus = isGroup ? _antivirus.includes(from) : false
 			const isBot = botNumber.includes(senderr)
 			const isOwner = ownerNumber.includes(senderr)
@@ -305,7 +305,7 @@ module.exports = Ramdani = async (Ramdani, mek) => {
         const timeWita = moment().tz('Asia/Jayapura').format('HH:mm:ss')
         
         const listmsg = (from, title, desc, list) => { // ngeread nya pake rowsId, jadi command nya ga keliatan
-            let po = Ramdani.prepareMessageFromContent(from, {"listMessage": {"title": title,"description": desc,"buttonText": "Pilih Disini","footerText": "© ʙʏ Kazuki","listType": "SINGLE_SELECT","sections": list}}, {})
+            let po = Ramdani.prepareMessageFromContent(from, {"listMessage": {"title": title,"description": desc,"buttonText": "Pilih Disini","footerText": "© ʙʏ ʀᴀᴍᴅᴀɴɪ ᴏғғɪᴄɪᴀʟ","listType": "SINGLE_SELECT","sections": list}}, {})
             return Ramdani.relayWAMessage(po, {waitForAck: true})
         }
         const isUrl = (url) => {
@@ -315,7 +315,7 @@ const reply = (teks) => {
 Ramdani.sendMessage(from, teks, text, {quoted: mek, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true})
 }
 const reply2 = (teks) => {
-Ramdani.sendMessage(from, teks, text, { thumbnail: thumb, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${wmtroli}`,body:"Meng F",previewType:"PHOTO",thumbnail:thumb,sourceUrl:`https://youtube.com/c/Kazuki`}}})
+Ramdani.sendMessage(from, teks, text, { thumbnail: thumb, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${wmtroli}`,body:"Meng F",previewType:"PHOTO",thumbnail:thumb,sourceUrl:`https://youtube.com/c/KazuKi`}}})
 }
 const freply = (teks) => {
 Ramdani.sendMessage(from, teks, text,{contextInfo :{text: 'hi',
@@ -626,7 +626,7 @@ return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net'
 			const troli =  {key: { fromMe: false,remoteJid: "status@broadcast", participant: '0@s.whatsapp.net'}, message: {orderMessage: {itemCount: 99999, status: 200, thumbnail: thumb, surface: 200, message: wmtroli, orderTitle: 'Ramdani Store', sellerJid: '0@s.whatsapp.net'} } }
 			
 			function addMetadata(packname, author) {	
-				if (!packname) packname = 'Bot'; if (!author) author = 'By KazuKi Official';	
+				if (!packname) packname = 'Bot'; if (!author) author = 'By KazuKiGans';	
 				author = author.replace(/[^a-zA-Z0-9]/g, '');	
 				let name = `${author}_${packname}`
 				if (fs.existsSync(`./media/stickers/${name}.exif`)) return `./media/sticker/${name}.exif`
@@ -702,7 +702,7 @@ const fdanz = {
 //Buat fake info bot
 //DI UBAH YATIM
 danzrun = process.uptime() 
-           Ramdani.setStatus(`${namabot} Aktif Selama ${(danzrun)} © Creator By KazuKi Official`).catch((_)=>_); //DI UBAH YATIMM
+           Ramdani.setStatus(`${namabot} Aktif Selama ${(danzrun)} © Creator By KazuKiGans`).catch((_)=>_); //DI UBAH YATIMM
           settingstatus = new Date() * 1;
 const jmn = moment.tz('Asia/Jakarta').format('HH.mm')
 				let d = new Date
@@ -806,7 +806,7 @@ case 'menu':
 case 'help':
 case 'h':
 case 'm':
-case 'danz':
+case 'kazuki':
 if (!isRegister) return freply(mess.regist)
 if (isBanned) return freply(mess.banned)
 freply(mess.wait)
@@ -957,7 +957,7 @@ if (!isRegister) return freply(mess.regist)
 if (isBanned) return freply(mess.banned)
  listMsg = {
  buttonText: 'Click here',
- footerText: '© Creator By KazuKi Official',
+ footerText: '© Creator By KazuKiGans',
  description: `Hai Kak ${pushname}👋, Silahkan Pilih Menunya Disini\nJangan Spam Ya Kak, Kasih Jeda 5 Detik!!!`,
  sections: [
                      {
@@ -1114,7 +1114,7 @@ case 'credits':
 case 'credit':
 case 'thanksto':
 case 'tqto':
-const KazuKi = "6283113989278@s.whatsapp.net"
+const KazuKiGans = "6283113989278@s.whatsapp.net"
 const yudha = "6282287486762@s.whatsapp.net"
 const saipul = "6288279268363@s.whatsapp.net"
 const hardianto = "62895325697662@s.whatsapp.net"
@@ -1122,7 +1122,7 @@ const hardianto = "62895325697662@s.whatsapp.net"
 textnye = `*BIG THANKS TO*
 
 *Creator*
-• *KazuKi Official @${ramdani.split("@")[0]}*
+• *KazuKiGans @${ramdani.split("@")[0]}*
 
 *Who Helped Me*
 • *Yudha Perdana @${yudha.split("@")[0]}*
@@ -1134,7 +1134,7 @@ textnye = `*BIG THANKS TO*
 • *Saipul Anuar @${saipul.split("@")[0]}*
 
 *Rest Api*
-• *Ramdani Official* : https://api-ramdanifficial.herokuapp.com
+• *KazuKiGans Official* : https://api-KazuKiGans.herokuapp.com
 • *Hardianto Chan* : https://hardianto.xyz
 `
 Ramdani.sendMessage(from, { contentText: `${textnye}`, 
@@ -1224,7 +1224,7 @@ break
        if (isBanned) return freply(mess.banned)
               timestampe = speed();
               latensie = speed() - timestampe
-              freply(`「 *KAZUKI BOTZ* 」\nMerespon dalam ${latensie.toFixed(4)} Sec 💬`)
+              freply(`「 *RAMDANI BOTZ* 」\nMerespon dalam ${latensie.toFixed(4)} Sec 💬`)
               break
       case 'botstat': 
               if (!isRegister) return freply(mess.regist)
@@ -1401,7 +1401,7 @@ case 'pinterest':
 				randIndex = Math.floor(Math.random() * jsonData.length);
 				danzKey = jsonData[randIndex];
 				asupan = await getBuffer(danzKey.result)
-				Ramdani.sendMessage(from, asupan, video, {quoted: mek, caption: '```ASUPAN NIH:V```'})
+				Ramdani.sendMessage(from, asupan, video, {quoted: mek, caption: 'Done By KazuKiGans🗿'})
 				break        
                 case 'asupan2':
                 if (!isRegister) return freply(mess.regist)
@@ -1414,7 +1414,7 @@ case 'pinterest':
 				randIndex = Math.floor(Math.random() * jsonData.length);
 				danzKey = jsonData[randIndex];
 				asupan = await getBuffer(danzKey.result)
-				Ramdani.sendMessage(from, asupan, video, {quoted: mek, caption: '```ASUPAN NIH:V```'})
+				Ramdani.sendMessage(from, asupan, video, {quoted: mek, caption: 'Done By KazuKiGans🗿'})
 				break 
               case 'ukhty':
               if (!isRegister) return freply(mess.regist)              
@@ -1735,7 +1735,7 @@ case 'togif':
                break
 
 //HIBURAN MENU
-case 'Ramdaniganteng':
+case 'KazuKiGantenh':
              if (!isRegister) return freply(mess.regist)
              if (isBanned) return freply(mess.banned)
               if (!q) return
@@ -2324,7 +2324,7 @@ case 'broadcasttext':
              for (let _ of anu) {
              Ramdani.sendMessage(_.jid, 
 			{"contentText": `*「 BROADCAST 」*\n\n${body.slice(4)}`,
-			"footerText": '© By Ramdani Official',
+			"footerText": '© By KazuKiGans',
 			"buttons": [
 			{"buttonId": `${prefix}verify`,
 			"buttonText": {"displayText": "VERIFY"
@@ -2352,7 +2352,7 @@ case 'broadcastimage':
              for (let _ of anu100) {
              Ramdani.sendMessage(_.jid, 
 			{"contentText": `*「 BROADCAST 」*\n\n${body.slice(4)}`,
-			"footerText": '© By Ramdani Official',
+			"footerText": '© By KazuKiGans',
 			"buttons": [
 			{"buttonId": `${prefix}verify`,
 			"buttonText": {"displayText": "VERIFY"
@@ -2481,9 +2481,9 @@ if (budy.includes(`Assalamualaikum`)) {
                   freply(`Waalaikumsalam ${pushname}`)
 
                   }
-                  if (budy.includes(`ramdani`)) {
+                  if (budy.includes(`KazuKi`)) {
 
-                  freply(`Ada Apa Manggil Tuan Ku?`)
+                  freply(`Ada Apa Manggil owner?`)
 
                   }
 }
